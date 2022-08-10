@@ -1,0 +1,38 @@
+﻿class EHRdata {{
+  static patientName = "{0}";
+  static last4 = "{1}";
+  static age = {2};
+  static sex = "{3}";
+  static reasonForConsult = "{4}";
+
+{5}
+
+
+  static rpi() {{
+    if(!(EHRdata.ReticulocytesPct.result === null || EHRdata.hematocrit.result === null)){{
+      var maturationFactor = -1;
+      if(EHRdata.hematocrit.result >= 35){{
+        maturationFactor = 1.0;
+      }} else if(EHRdata.hematocrit.result >= 25){{
+        maturationFactor = 1.5;
+      }} else if(EHRdata.hematocrit.result >= 20){{
+        maturationFactor = 2.0;
+      }} else {{
+        maturationFactor = 2.5;
+      }}
+      var rpiCalc = (EHRdata.ReticulocytesPct.result*(EHRdata.hematocrit.result/42))/maturationFactor;
+      return rpiCalc;
+    }} else {{
+      return "";
+    }}
+  }}
+
+  static mentzer() {{
+    if(!(EHRdata.MCV.result === null || EHRdata.RBCs.result === null)){{
+      var index = EHRdata.MCV.result / EHRdata.RBCs.result;
+      return index;
+    }} else {{
+      return "";
+    }} 
+  }}
+}}

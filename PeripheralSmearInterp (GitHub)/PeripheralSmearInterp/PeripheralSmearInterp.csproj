@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC0CC185-222F-4316-A005-1A08A595DBB5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PeripheralSmearInterp</RootNamespace>
+    <AssemblyName>PeripheralSmearInterp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Attachmate.Reflection, Version=1.2.0.0, Culture=neutral, PublicKeyToken=13bff1b6907eadcf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Micro Focus\Reflection\Programmer Interfaces\Attachmate.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Attachmate.Reflection.Emulation.OpenSystems, Version=1.2.0.0, Culture=neutral, PublicKeyToken=13bff1b6907eadcf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Micro Focus\Reflection\Programmer Interfaces\Attachmate.Reflection.Emulation.OpenSystems.dll</HintPath>
+    </Reference>
+    <Reference Include="Attachmate.Reflection.Framework, Version=1.2.0.0, Culture=neutral, PublicKeyToken=13bff1b6907eadcf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Micro Focus\Reflection\Programmer Interfaces\Attachmate.Reflection.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedLibrary">
+      <HintPath>\\R04.med.va.gov\V01\WHC\Users\VHACONHAUSER\Desktop\My programs\SharedLibrary\bin\Debug\SharedLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCPRSLabsFromFile.cs" />
+    <Compile Include="ManipulateDir.cs" />
+    <Compile Include="MSWindowFcns.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCDWFromVista.cs" />
+    <Compile Include="WritePeripheralSmear.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\EHRDataJs.txt" />
+    <Content Include="Resource\Extraction_all %28v1%29.sql" />
+    <Content Include="Resource\UpdateCDWFromVista.sql" />
+    <Content Include="Resource\Extraction_all.sql" />
+    <Content Include="Resource\Extraction_singlePatient %28v1%29.sql" />
+    <Content Include="Resource\Extraction_singlePatient.sql" />
+    <Content Include="Resource\TestIdToWebIdDictionary.txt" />
+    <Content Include="Resource\TestNameSpecimenToTestId.txt" />
+    <Content Include="website\css\bootstrap-4.4.1.css" />
+    <Content Include="website\css\bootstrap-multiselect.css" />
+    <Content Include="website\css\Main.css" />
+    <Content Include="website\images\Tiger.svg" />
+    <Content Include="website\js\bootstrap-4.4.1.js" />
+    <Content Include="website\js\bootstrap-multiselect.js" />
+    <Content Include="website\js\dictionary.js" />
+    <Content Include="website\js\editing.js" />
+    <Content Include="website\js\EHRdata.js" />
+    <Content Include="website\js\interpPhrase.js" />
+    <Content Include="website\js\jquery-3.4.1.min.js" />
+    <Content Include="website\js\Lab.js" />
+    <Content Include="website\js\Main.js" />
+    <Content Include="website\js\Med.js" />
+    <Content Include="website\js\popper.min.js" />
+    <Content Include="website\Main.html" />
+    <Content Include="website\readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
