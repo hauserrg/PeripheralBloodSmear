@@ -5,7 +5,7 @@
 // - checkbox format
 // - checkbox availability guided by data
 
-dev_enable = false;
+dev_enable = true;
 
 class Interpretation{
 
