@@ -2,7 +2,7 @@
 
 class EHRdata {
   static patientName = "This Patient Name";
-  static last4 = "0412";
+  static last4 = "0000";
   static age = 53;
   static sex = "male";
   static reasonForConsult = "anemia";
