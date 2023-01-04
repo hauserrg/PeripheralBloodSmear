@@ -21,7 +21,7 @@ This shows PROSER on example patient data. The lab results fields have been conf
       - 2. Click "Copy" next to the dropdown menu. This will add the text to the system clipboard allowing the user to insert where desired and preserving any edits.
 
 ### Limitations:
- - The ability to edit lab values allows the user to explore the range of responses, but user edited lab values are not validated for internal consistency or [physiologic plausibility. Please take this into account when interpreting the output for edited lab values.
+ - The ability to edit lab values allows the user to explore the range of responses, but user edited lab values are not validated for internal consistency or physiologic plausibility. Please take this into account when interpreting the output for edited lab values.
  - For example:
    - the differential % values can be modified to sum to greater than 100%
    - The values of hemoglobin and hematocrit are usually highly correlated but could be modified to create non-plausible differences (for example anemia-range hemoglobin with elevated hematocrit)
