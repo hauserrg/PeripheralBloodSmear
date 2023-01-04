@@ -1,0 +1,20 @@
+/* CSS Document */
+input {
+  border-radius: 25px;
+  text-align: center;
+}
+
+fieldset {
+  margin: 0.4rem;
+  padding: 0.4rem;
+  border: solid 0.5px;
+}
+
+table {
+  font-size: 14px;
+}
+
+.tableRowDivider {
+  border-bottom: solid 2px black;
+}
+
