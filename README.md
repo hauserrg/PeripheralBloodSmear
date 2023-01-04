@@ -1,7 +1,5 @@
 # Proser: Peripheral Blood Smear Interpretation
 
-## Description
-
 This is a peripheral blood smear interpretation support tool designed to improve efficiency and standardization. It generates an initial interpretation based on lab values and provides standardized methods for reporting findings visualized on microscopy. There are microspherocytes, microcytes, and teardrop cells present. 
 
 ## Useage:
