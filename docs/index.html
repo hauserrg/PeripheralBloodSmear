@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Peripheral smear: Anemia</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="css/Main.css" rel="stylesheet">
+
+</head>
+
+<body style="background-image: url('images/Tiger.svg'); background-size: 100%;">
+    <br>
+    <br>
+    <div style="background-color: white; border-radius: 25px; width: 75%; margin: auto; padding: 10px;">
+        <br>
+        <div class="row">
+            <div class="col-6">
+                <h1><span id="patientName">Patient Name Here</span> (<span id="last4">Last 4</span>)</h1>
+            </div>
+            <div class="col-6">
+                <label class="col-6 text-center">Age</label><input class="col-3" id="age"><br>
+                <form id="sex">
+                    <label class="col-6 text-center">Sex</label>
+                    <input class="col-1" type="radio" name="sexRadio" id="sexMale"><label id="sexMaleLabel"
+                        class="col=1">Male</label>
+                    <input class="col-1" type="radio" name="sexRadio" id="sexFemale"><label id="sexFemaleLabel"
+                        class="col=1">Female</label><br>
+                </form>
+                <label class="col-2 text-center">Reason</label><input class="col-10" id="reasonForConsult"><br>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+                <div class="col-6">
+                    <h2>Most Recent CBC</h2>
+                    <table id="cbctable" class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>Test</th>
+                                <th>Result</th>
+                                <th>Unit</th>
+                                <th>Ref. Range</th>
+                                <th>Specimen Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="hematocrit">
+                                <td>Hematocrit</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="hemoglobin">
+                                <td>Hemoglobin</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="RBCs">
+                                <td>RBCs</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="RDW">
+                                <td>RDW</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="MCV">
+                                <td>MCV</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="MCHC">
+                                <td>MCHC</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="MCH">
+                                <td>MCH</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="NucleatedRBCs">
+                                <td>Nucleated RBCs</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="WBCs">
+                                <td>WBCs</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Neutrophils">
+                                <td>Neutrophils</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="NeutrophilsAbs">
+                                <td>Neutrophils</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Lymphocytes">
+                                <td>Lymphocytes</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="LymphocytesAbs">
+                                <td>Lymphocytes</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Monocytes">
+                                <td>Monocytes</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Eosinophils">
+                                <td>Eosinophils</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Basophils">
+                                <td>Basophils</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="ImmatureGranulocytes">
+                                <td>Immature granulocytes</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Platelets">
+                                <td>Platelets</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="MeanPlateletVolume">
+                                <td>Mean platelet volume</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="immaturePlateletFraction" class="tableRowDivider">
+                                <td>Immature Platelet Fraction</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="ReticulocytesAbs">
+                                <td>Reticulocytes</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="ReticulocytesPct">
+                                <td>Reticulocytes</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="ImmatureReticulocytes">
+                                <td>Immature reticulocytes</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="ReticulocyteHemoglobin" class="tableRowDivider">
+                                <td>Reticulocyte hemoglobin</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-6">
+                    <h2>Ancillary Labs</h2>
+                    <table id="labtable" class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>Test</th>
+                                <th>Result</th>
+                                <th>Unit</th>
+                                <th>Ref. Range</th>
+                                <th>Specimen Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="Transferrin">
+                                <td>Transferrin</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="TIBC">
+                                <td>TIBC</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Iron">
+                                <td>Iron</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="TransferrinSaturation">
+                                <td>Transferrin Saturation</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Ferritin" class="tableRowDivider">
+                                <td>Ferritin</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="B12">
+                                <td>B12</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Folate">
+                                <td>Folate</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Homocysteine">
+                                <td>Homocysteine</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="MethylmelonicAcid" class="tableRowDivider">
+                                <td>Methylmelonic acid</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="Haptoglobin">
+                                <td>Haptoglobin</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="BilirubinTotal">
+                                <td>Bilirubin, total</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="BilirubinIndirect">
+                                <td>Bilirubin, indirect</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="LDH" class="tableRowDivider">
+                                <td>LDH</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="urineBlood" class="tableRowDivider">
+                                <td>Urine blood</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="hemoglobinElectrophoresis" class="tableRowDivider">
+                                <td>Hemoglobin electrophoresis</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="ast">
+                                <td>AST</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="alt">
+                                <td>ALT</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="creatinine" class="tableRowDivider">
+                                <td>Creatinine</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="tsh">
+                                <td>TSH</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                            <tr id="ft4">
+                                <td>Free T4</td>
+                                <td class="result" contentEditable=true></td>
+                                <td class="unit"></td>
+                                <td class="ref"></td>
+                                <td class="specDate"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<h2>Selected Medications</h2>
+                    <table id="labtable" class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>Medication</th>
+                                <th>Drug name</th>
+                                <th>Issued</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="medIron">
+								<td>Iron</td>
+                                <td class="drugName"></td>
+                                <td class="issueDate"></td>
+                                <td class="status"></td>
+                            </tr>
+                        </tbody>
+                    </table>                    
+                </div>
+        </div>
+        <div class = "row">
+            <div class="col-6">
+                <form id = "smearFindings">
+                    <fieldset>
+                        <legend style="width:auto; padding: 3px 6px;">Smear Findings</legend>
+                        <div>
+                            <!-- <label>RBC Findings:</label> -->
+                            <div class="input-group">
+                                <div class="input-group-prepend" width="550px">
+                                    <span class="input-group-text">RBC Findings:</span>
+                                </div>
+                                <select id="rbcFindings" multiple="multiple">
+                                        <!-- <option value="no schistocytes" selected="selected">no schistocytes</option> -->
+                                        <option value="noschistocytes">no schistocytes</option>
+                                        <option value="schistocytes">schistocytes</option>
+                                        <option value="acanthocytes">acanthocytes</option>
+                                        <option value="echinocytes">echinocytes</option>
+                                        <option value="microspherocytes">microspherocytes</option>
+                                        <option value="macrocytes">macrocytes</option>
+                                        <option value="microcytes">microcytes</option>
+                                        <option value="sicklecells">sickle cells</option>
+                                        <option value="targetcells">target cells</option>
+                                        <option value="teardropcells">teardrop cells</option>
+                                        <option value="bitecells">bite cells</option>
+                                        <option value="blistercells">blister cells</option>
+                                        <option value="howelljolly">Howell-Jolly bodies</option>
+                                        <option value="pappenheimer">Pappenheimer bodies</option>
+                                </select>
+                                <div class="input-group-append">
+                                    <button id="copy-rbc" type="button" class="btn btn-outline-secondary">Copy</button>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- <label width="90px">WBC Findings:</label> -->
+                            <div class="input-group">
+                                <div class="input-group-prepend" width="550px">
+                                    <span class="input-group-text">WBC Findings:</span>
+                                </div>
+                                <select id="wbcFindings" multiple="multiple">
+                                        <option value="hypersegmented">hypersegmented neutrophils</option>
+                                        <option value="hyposegmented">hyposegmented neutrophils</option>
+                                        <option value="vacuolatedmono">vacuolated monocytes</option>
+                                        <option value="noparasites">no parasites</option>
+                                </select>
+                                <div class="input-group-append">
+                                    <button id = "copy-wbc" type="button" class="btn btn-outline-secondary">Copy</button>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- <label>Platelet Findings:</label> -->
+                            <div class="input-group">
+                                <div class="input-group-prepend" width="550px">
+                                    <span class="input-group-text">Plt. Findings:</span>
+                                </div>
+                                <select id="pltFindings" multiple = "multiple">
+                                        <option value="normal" selected="selected">normal</option>
+                                        <option value="large">large</option>
+                                        <option value="giant">giant</option>
+                                </select>
+                                <div class="input-group-append">
+                                    <button id="copy-plts" type="button" class="btn btn-outline-secondary">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+			</div>
+			<div class="col-6">
+                <form id="clinicalPhrases">
+                    <fieldset>
+                        <legend style="width:auto; padding: 3px 6px;">Clinical Phrases</legend>
+                            <input id="ipf" type="checkbox"><label for="ipf" style="padding: 3px;">Request IPF</label><br>
+                            <input id="requestRetics" type="checkbox"><label for="requestRetics" style="padding: 3px;">Request Reticulocytes</label><br>
+                             <!-- <input id="rpi" type="checkbox"><label for="rpi" style="padding: 3px;">Include RPI</label><br> -->
+                            <input id="flowCytometry" type="checkbox"><label for="flowCytometry" style="padding: 3px;">Request Flow Cytometry</label>
+                    </fieldset>
+                </form>
+            </div>
+        </div>    		
+        <div class="row">
+            <div class = "col-12" style="text-align:center">
+                <h2>Interpretation</h2>
+                <textarea id="interp" style="width: 75%; border-radius: 5px;" rows="20" spellcheck="true">&#160;&#160;&#160;Hello</textarea>
+				<br>
+				<button type="button" id="refreshInterp" class="btn btn-secondary" data-toggle="modal" data-target="#refreshModal">Refresh</button>
+                <!-- Modal -->
+                <div class="modal fade" id="refreshModal" tabindex="-1" role="dialog" aria-labelledby="refreshModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="refreshModalLabel">Refresh warning:</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        Refreshing interpretation will delete any added content when re-generating automated interpretation. If you wish to add smear morphology content from the dropdown menus, click "Copy" to copy to clipboard.
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="refreshInterpModal" type="button" class="btn btn-primary">Continue with Refresh</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <button type="button" id="reInitialize" class="btn btn-primary">Reinitialize from Current Values</button>
+                <button type="button" id="copyInterp" class="btn btn-primary">Copy Text</button>
+                <!-- Modal -->
+                <div class="modal fade" id="copyModal" tabindex="-1" role="dialog" aria-labelledby="copyModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="copyModalLabel">Wildcard present</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Interpretation contains wildcard character "***".
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Go back</button>
+                          <button id="copyAnyway" type="button" class="btn btn-primary" data-dismiss="modal">Copy anyway</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <footer class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p>Copyright R. George Hauser, Mark Iscoe, Andrew Loza ©. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+    <script src="js/Lab.js"></script>
+	<script src="js/Med.js"></script>
+    <script src="js/EHRdata.js"></script>
+    <script src="js/interpPhrase.js"></script>
+    <script src="js/bootstrap-multiselect.js"></script>
+    
+    <script src="js/Main.js"></script>
+
+</body>
+
+</html>

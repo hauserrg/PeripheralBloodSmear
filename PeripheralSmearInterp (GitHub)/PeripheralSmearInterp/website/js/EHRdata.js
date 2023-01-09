@@ -43,11 +43,11 @@ class EHRdata {
   static ImmatureReticulocytes = new Lab("ImmatureReticulocytes", null, null, null, null, null);
   static ReticulocyteHemoglobin = new Lab("ReticulocyteHemoglobin", null, null, null, null, null);
   static immaturePlateletFraction = new Lab("immaturePlateletFraction", 10, "", "May 1, 2022", "5", "15");
-  static tsh = new Lab("tsh", 10, "", "May 1, 2022", "5", "15");
-  static ft4 = new Lab("ft4", 10, "", "May 1, 2022", "5", "15"); //Free T4 (thyroxine)
-  static ast = new Lab("ast", null, "", "May 1, 2022", "5", "15");
-  static alt = new Lab("alt", null, "", "May 1, 2022", "5", "15");
-  static creatinine = new Lab("creatinine", null, "", "May 1, 2022", "5", "15");
+  static tsh = new Lab("tsh", 10, "mU/L", "May 1, 2022", "0.5", "5");
+  static ft4 = new Lab("ft4", 10, "ng/dL", "May 1, 2022", "0.9", "2.3"); //Free T4 (thyroxine)
+  static ast = new Lab("ast", null, "U/L", "May 1, 2022", "8", "33");
+  static alt = new Lab("alt", null, "U/L", "May 1, 2022", "4", "36");
+  static creatinine = new Lab("creatinine", null, "mg/dL", "May 1, 2022", "0.7", "1.3");
   //static urineBlood = new Lab("urineBlood", "3+", null, "2022-07-07 13:33:55", "Neg", null);
   static urineBlood = new Lab("urineBlood", "NEG", null, "2022-07-07 13:33:55", "NEG", null);
   static haptoglobin = new Lab("haptoglobin", 50, "mg/dL", "May 1, 2022", "20", "100");
